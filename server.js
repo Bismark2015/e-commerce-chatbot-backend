@@ -73,104 +73,161 @@ async function processChatMessage(message, userId) {
   
   // Greeting
   if (lowerMsg.includes('hello') || lowerMsg.includes('hi') || lowerMsg.includes('hey')) {
-    return 'Hello! Welcome to our store. We sell electronics including laptops, smartphones, headphones, smart watches, tablets, and cameras. How can I help you today?';
+    return 'Hello! 👋 Welcome to our electronics store. We have 50+ products including laptops, phones, smart home devices, and more. How can I help you today?';
   }
   
-  // What do you sell / Product catalog
-  if (lowerMsg.includes('what do you sell') || lowerMsg.includes('what products') || lowerMsg.includes('what items')) {
-    return 'We sell a variety of electronics:\n- Laptops ($999)\n- Smartphones ($699)\n- Headphones ($199)\n- Smart Watches ($299)\n- Tablets ($449)\n- Cameras ($799)\n\nWhich product interests you?';
+  // What do you sell
+  if (lowerMsg.includes('what do you sell') || lowerMsg.includes('what products') || lowerMsg.includes('what product') || lowerMsg.includes('what items') || lowerMsg.includes('show me products')) {
+    return 'We sell electronics and home items:\n\n💻 Computers: Laptops, Monitors, Keyboards, Mice\n📱 Mobile: Phones, Tablets, Chargers, Power Banks\n🎧 Audio: Headphones, Speakers, Microphones\n⌚ Wearables: Smart Watches, Fitness Trackers\n🏠 Smart Home: Cameras, Plugs, Bulbs, Thermostats\n🎮 Gaming: Consoles, Controllers, VR Headsets\n🏡 Home Appliances: Coffee Makers, Blenders, Microwaves\n\nWhat are you looking for?';
   }
   
-  // General product inquiry
-  if (lowerMsg.includes('product') || lowerMsg.includes('looking for') || lowerMsg.includes('show me')) {
-    return 'We have electronics, including laptops, smartphones, headphones, smart watches, tablets, and cameras. What are you looking for?';
-  }
-  
-  // Laptop inquiry
+  // Laptop
   if (lowerMsg.includes('laptop')) {
-    if (lowerMsg.includes('price') || lowerMsg.includes('cost') || lowerMsg.includes('how much')) {
-      return 'Our laptop costs $999. It is a high-performance laptop perfect for work and gaming. Would you like to know more about its features?';
-    }
-    return 'We have a high-performance laptop for $999. It is great for work and gaming. Would you like to add it to your cart?';
+    return 'Our high-performance laptop costs GH₵999. Perfect for work and gaming! We also have laptop accessories like stands (GH₵130), cooling pads (GH₵75), and backpacks (GH₵200). Interested?';
   }
   
-  // Smartphone inquiry
+  // Phone/Smartphone
   if (lowerMsg.includes('phone') || lowerMsg.includes('smartphone') || lowerMsg.includes('mobile')) {
-    if (lowerMsg.includes('price') || lowerMsg.includes('cost') || lowerMsg.includes('how much')) {
-      return 'Our smartphone costs $699. It is the latest flagship model with an amazing camera. Interested?';
-    }
-    return 'We have the latest flagship smartphone for $699 with an amazing camera. Would you like more details?';
+    return 'Our latest smartphone costs GH₵699. We also have phone cases (GH₵40), screen protectors (GH₵25), and chargers (GH₵45). Want to know more?';
   }
   
-  // Headphones inquiry
+  // Headphones
   if (lowerMsg.includes('headphone') || lowerMsg.includes('headset')) {
-    if (lowerMsg.includes('price') || lowerMsg.includes('cost') || lowerMsg.includes('how much')) {
-      return 'Our wireless noise-canceling headphones cost $199. Great sound quality!';
-    }
-    return 'We have wireless noise-canceling headphones for $199. Perfect for music lovers!';
+    return 'Wireless headphones are GH₵199. Great sound quality and comfortable for long use! 🎧';
   }
   
-  // Smart watch inquiry
+  // Watch/Smart Watch
   if (lowerMsg.includes('watch') || lowerMsg.includes('smartwatch')) {
-    if (lowerMsg.includes('price') || lowerMsg.includes('cost') || lowerMsg.includes('how much')) {
-      return 'Our smart watch costs $299. It has fitness tracking and GPS features.';
-    }
-    return 'We have a fitness tracking smartwatch with GPS for $299. Great for staying active!';
+    return 'Smart watch costs GH₵299. We also have fitness trackers for GH₵210. Both track your health and fitness! ⌚';
   }
   
-  // Tablet inquiry
-  if (lowerMsg.includes('tablet') || lowerMsg.includes('ipad')) {
-    if (lowerMsg.includes('price') || lowerMsg.includes('cost') || lowerMsg.includes('how much')) {
-      return 'Our tablet costs $449. Perfect for entertainment and productivity.';
-    }
-    return 'We have a portable tablet for $449, great for entertainment and work!';
+  // Tablet
+  if (lowerMsg.includes('tablet')) {
+    return 'We have a 10-inch Android tablet for GH₵450. Perfect for entertainment and productivity!';
   }
   
-  // Camera inquiry
-  if (lowerMsg.includes('camera')) {
-    if (lowerMsg.includes('price') || lowerMsg.includes('cost') || lowerMsg.includes('how much')) {
-      return 'Our professional camera costs $799. It is a high-quality mirrorless camera.';
-    }
-    return 'We have a professional mirrorless camera for $799. Perfect for photography enthusiasts!';
+  // Monitor
+  if (lowerMsg.includes('monitor') || lowerMsg.includes('screen') || lowerMsg.includes('display')) {
+    return 'Our 27-inch 4K monitor costs GH₵850. Crystal clear display for work or gaming! 🖥️';
   }
   
-  // General price inquiry
+  // Keyboard
+  if (lowerMsg.includes('keyboard')) {
+    return 'Mechanical gaming keyboard is GH₵120. Great for typing and gaming!';
+  }
+  
+  // Mouse
+  if (lowerMsg.includes('mouse')) {
+    return 'Wireless ergonomic mouse costs GH₵60. Comfortable and precise!';
+  }
+  
+  // Speaker
+  if (lowerMsg.includes('speaker')) {
+    return 'Bluetooth portable speaker is GH₵350. Take your music anywhere! 🔊';
+  }
+  
+  // Charger/Power Bank
+  if (lowerMsg.includes('charger') || lowerMsg.includes('power bank') || lowerMsg.includes('charging')) {
+    return 'We have:\n- Fast USB-C charger: GH₵45\n- 20000mAh power bank: GH₵110\n- Multi-device charging dock: GH₵95\n\nWhich one do you need?';
+  }
+  
+  // Camera/Webcam
+  if (lowerMsg.includes('camera') || lowerMsg.includes('webcam')) {
+    return 'We have:\n- 1080p HD webcam: GH₵280\n- Indoor security camera: GH₵310\n\nWhich one interests you? 📷';
+  }
+  
+  // Microphone
+  if (lowerMsg.includes('microphone') || lowerMsg.includes('mic')) {
+    return 'USB condenser microphone costs GH₵160. Perfect for streaming, podcasts, and calls! 🎤';
+  }
+  
+  // Router/Wi-Fi
+  if (lowerMsg.includes('router') || lowerMsg.includes('wifi') || lowerMsg.includes('wi-fi') || lowerMsg.includes('internet')) {
+    return 'Dual-band Wi-Fi router is GH₵220. Fast and reliable internet connection!';
+  }
+  
+  // Storage (SSD/Hard Drive/USB)
+  if (lowerMsg.includes('storage') || lowerMsg.includes('ssd') || lowerMsg.includes('hard drive') || lowerMsg.includes('usb') || lowerMsg.includes('flash')) {
+    return 'Storage options:\n- 1TB external SSD: GH₵380\n- 2TB external HDD: GH₵290\n- 64GB USB flash drive: GH₵40\n\nWhich do you need?';
+  }
+  
+  // Printer/Scanner
+  if (lowerMsg.includes('printer') || lowerMsg.includes('scanner') || lowerMsg.includes('print')) {
+    return 'We have:\n- All-in-one inkjet printer: GH₵520\n- Document scanner: GH₵400\n\nWhich one do you need?';
+  }
+  
+  // Projector
+  if (lowerMsg.includes('projector')) {
+    return 'Portable mini projector costs GH₵1200. Great for presentations and movies! 📽️';
+  }
+  
+  // E-reader
+  if (lowerMsg.includes('e-reader') || lowerMsg.includes('ereader') || lowerMsg.includes('kindle')) {
+    return '6-inch e-ink reader is GH₵550. Perfect for reading books! 📚';
+  }
+  
+  // Gaming
+  if (lowerMsg.includes('game') || lowerMsg.includes('gaming') || lowerMsg.includes('console') || lowerMsg.includes('controller')) {
+    return 'Gaming products:\n- Next-gen gaming console: GH₵2000\n- Wireless gamepad: GH₵180\n- VR headset: GH₵1100\n- 4K camera drone: GH₵1500\n\nWhat are you interested in? 🎮';
+  }
+  
+  // Smart Home
+  if (lowerMsg.includes('smart home') || lowerMsg.includes('smart plug') || lowerMsg.includes('smart bulb') || lowerMsg.includes('smart light')) {
+    return 'Smart home devices:\n- Wi-Fi smart plug: GH₵70\n- Smart RGB bulb: GH₵45\n- Video doorbell: GH₵420\n- Smart thermostat: GH₵380\n\nWhat would you like?';
+  }
+  
+  // Home Appliances
+  if (lowerMsg.includes('coffee') || lowerMsg.includes('kettle') || lowerMsg.includes('toaster') || lowerMsg.includes('blender') || lowerMsg.includes('microwave') || lowerMsg.includes('fridge') || lowerMsg.includes('vacuum') || lowerMsg.includes('appliance')) {
+    return 'Home appliances:\n- Coffee maker: GH₵300\n- Electric kettle: GH₵120\n- Toaster: GH₵150\n- Blender: GH₵280\n- Microwave: GH₵600\n- Robot vacuum: GH₵750\n- Mini fridge: GH₵3500\n- Air purifier: GH₵550\n\nWhat do you need?';
+  }
+  
+  // Accessories
+  if (lowerMsg.includes('accessories') || lowerMsg.includes('cable') || lowerMsg.includes('adapter') || lowerMsg.includes('case') || lowerMsg.includes('stand')) {
+    return 'Accessories:\n- Cable kit: GH₵55\n- USB-C adapter: GH₵30\n- Laptop stand: GH₵130\n- Laptop backpack: GH₵200\n- Phone case: GH₵40\n- Screen protector: GH₵25\n\nWhat are you looking for?';
+  }
+  
+  // Price inquiry (general)
   if (lowerMsg.includes('price') || lowerMsg.includes('cost') || lowerMsg.includes('how much')) {
-    return 'Our prices range from $199 to $999:\n- Headphones: $199\n- Smart Watch: $299\n- Tablet: $449\n- Smartphone: $699\n- Camera: $799\n- Laptop: $999\n\nWhich product would you like to know more about?';
+    return 'Our prices range from GH₵25 to GH₵3500. Popular items:\n\n💻 Laptop: GH₵999\n📱 Phone: GH₵699\n⌚ Smart Watch: GH₵299\n🎧 Headphones: GH₵199\n🖥️ Monitor: GH₵850\n\nWhat product are you interested in?';
+  }
+  
+  // Cheap/Budget
+  if (lowerMsg.includes('cheap') || lowerMsg.includes('budget') || lowerMsg.includes('affordable') || lowerMsg.includes('low price')) {
+    return 'Budget-friendly items under GH₵100:\n- Screen protector: GH₵25\n- Adapter: GH₵30\n- USB drive: GH₵40\n- Phone case: GH₵40\n- Charger: GH₵45\n- Smart bulb: GH₵45\n- Cable kit: GH₵55\n- Mouse: GH₵60\n- Laptop sleeve: GH₵65\n- Smart plug: GH₵70\n- Cooling fan: GH₵75\n- Charging dock: GH₵95\n\nInterested in any?';
   }
   
   // Order tracking
-  if (lowerMsg.includes('order') || lowerMsg.includes('track') || lowerMsg.includes('delivery')) {
-    return 'To track your order, please provide your order number (e.g., #12345). You can find it in your confirmation email.';
+  if (lowerMsg.includes('order') || lowerMsg.includes('track')) {
+    return 'To track your order, please provide your order number (e.g., #12345). You can find it in your confirmation email. 📦';
   }
   
-  // Return/Refund
+  // Returns
   if (lowerMsg.includes('return') || lowerMsg.includes('refund')) {
-    return 'Our return policy allows returns within 30 days of purchase. The item must be in original condition. Would you like to initiate a return?';
+    return 'Our return policy allows returns within 30 days of purchase. The item must be in original condition with all packaging. Would you like to initiate a return?';
   }
   
-  // Payment methods
-  if (lowerMsg.includes('payment') || lowerMsg.includes('pay') || lowerMsg.includes('card')) {
-    return 'We accept all major credit cards, debit cards, and mobile payments. Your payment information is secure with us!';
-  }
-  
-  // Shipping
+  // Shipping/Delivery
   if (lowerMsg.includes('shipping') || lowerMsg.includes('delivery') || lowerMsg.includes('ship')) {
-    return 'We offer free shipping on orders over $500. Standard delivery takes 3-5 business days. Express shipping is available for an additional fee.';
+    return 'We offer FREE shipping on orders over GH₵500! Standard delivery takes 3-5 business days within Ghana. Express shipping available for GH₵50. 🚚';
   }
   
-  // Thank you
+  // Payment
+  if (lowerMsg.includes('payment') || lowerMsg.includes('pay')) {
+    return 'We accept:\n- Mobile Money (MTN, Vodafone, AirtelTigo)\n- Credit/Debit Cards (Visa, Mastercard)\n- Bank Transfer\n\nYour payment is 100% secure! 🔒';
+  }
+  
+  // Thanks
   if (lowerMsg.includes('thank') || lowerMsg.includes('thanks')) {
-    return 'You are welcome! Is there anything else I can help you with?';
+    return 'You\'re welcome! 😊 Is there anything else I can help you with?';
   }
   
-  // Goodbye
+  // Bye
   if (lowerMsg.includes('bye') || lowerMsg.includes('goodbye')) {
-    return 'Thank you for visiting our store! Have a great day! Feel free to come back anytime.';
+    return 'Thank you for visiting our store! Have a great day! 👋 Come back soon!';
   }
   
-  // Default response
-  return 'I can help you with:\n- Product information (laptops, phones, headphones, etc.)\n- Prices and features\n- Order tracking\n- Returns and refunds\n- Shipping information\n\nWhat would you like to know?';
+  // Default
+  return 'I can help you with:\n\n✅ Browse our 50+ products\n✅ Check prices and features\n✅ Find budget-friendly items\n✅ Track your order\n✅ Returns & refunds\n✅ Shipping information\n\nJust ask me about any product or service! Type "what do you sell" to see all categories.';
 }
 
 app.listen(PORT, () => {
